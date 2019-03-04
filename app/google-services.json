@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "562217485874",
+    "firebase_url": "https://video-chat-724e1.firebaseio.com",
+    "project_id": "video-chat-724e1",
+    "storage_bucket": "video-chat-724e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562217485874:android:0fc1c73cd9d31133",
+        "android_client_info": {
+          "package_name": "com.sharma.kuhuk.videochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562217485874-497121v691n2qouk6k723uj4unvr3qg3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sharma.kuhuk.videochat",
+            "certificate_hash": "dcb69d35f0649ca2a7ba3e555a2117ec1233a808"
+          }
+        },
+        {
+          "client_id": "562217485874-e201u7704585d0t59a9fbqe941712o5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr2bkkgOOJzvxx2OJdzNJi1lLh6eu_n3I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562217485874-e201u7704585d0t59a9fbqe941712o5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
