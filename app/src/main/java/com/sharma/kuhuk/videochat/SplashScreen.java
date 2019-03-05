@@ -36,7 +36,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 if (checkLogin != null && !checkLogin.equals(Constants.NA_DEFAULT)) {
-                    startActivity(new Intent(SplashScreen.this, HomeActivity.class));
+                    startActivity(new Intent(SplashScreen.this, HomeScreen.class));
                 }
                 else {
                     startActivity(new Intent(SplashScreen.this, MainActivity.class));

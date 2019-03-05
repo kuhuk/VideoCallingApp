@@ -1,5 +1,6 @@
 package com.sharma.kuhuk.videochat;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ public class VideoChat extends AppCompatActivity implements Session.SessionListe
     private FrameLayout mPublisherViewContainer;
     private FrameLayout mSubscriberViewContainer;
     String sessionId, token;
+    FloatingActionButton btnEndCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,8 @@ public class VideoChat extends AppCompatActivity implements Session.SessionListe
         actionbar.hide();
 
         requestPermissions();
+
+//        btnEndCall = findViewById(R.id.btnEndCall);
     }
 
     @Override
@@ -81,9 +85,9 @@ public class VideoChat extends AppCompatActivity implements Session.SessionListe
 
                     sessionIdVal = response.body().getSessionId();
                     tokenVal = response.body().getToken();
-
                     sessionId = sessionIdVal;
                     token = tokenVal;
+
                     Log.e(TAG, sessionIdVal);
                     Log.e(TAG, tokenVal);
                     Database.sessionData(sessionId, token);
@@ -101,11 +105,21 @@ public class VideoChat extends AppCompatActivity implements Session.SessionListe
         }
     }
 
-    void getSession (String sessionIdVal, String tokenVal) {
+    void getSession (String sessionIdVal, final String tokenVal) {
         // initialize and connect to the session
         mSession = new Session.Builder(this, API_KEY, sessionIdVal).build();
         mSession.setSessionListener(this);
         mSession.connect(tokenVal);
+
+        // to end call
+//        btnEndCall.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mSession = null;
+//                sessionId = null;
+//                token = null;
+//            }
+//        });
     }
 
     @Override

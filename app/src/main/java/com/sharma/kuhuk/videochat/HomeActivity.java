@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         roomName = etRoomName.getText().toString();
 
         if (roomName.isEmpty())
-            Toast.makeText(this, "Please enter a room name.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter a room email.", Toast.LENGTH_SHORT).show();
         else
             result = true;
         return result;

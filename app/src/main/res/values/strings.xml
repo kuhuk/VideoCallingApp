@@ -14,4 +14,8 @@
     <string name="videochat">VideoChat</string>
     <string name="room_name">Room Name</string>
     <string name="submit">Submit</string>
+    <string name="logout">Logout</string>
+    <string name="invite_to_call">Invite to call</string>
+    <string name="other_users_registered_on_the_app">Other users registered on the app :</string>
+    <string name="name">Name</string>
 </resources>

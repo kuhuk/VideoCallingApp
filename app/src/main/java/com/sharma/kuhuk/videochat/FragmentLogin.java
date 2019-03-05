@@ -31,9 +31,12 @@ public class FragmentLogin extends Fragment {
 
     TextView tvSignUp;
     Button btnLLogin;
-    private EditText etLUserEmail, etLpassword;
+    private static EditText etLUserEmail;
+    private static EditText etLpassword;
+    private static EditText etName;
     private FirebaseAuth firebaseAuth;
     Boolean result = false;
+    public static String email;
 
     public FragmentLogin() {
         // Required empty public constructor
@@ -63,7 +66,7 @@ public class FragmentLogin extends Fragment {
                     editor.putString(Constants.PREF_USER_EMAIL, etLUserEmail.getText().toString());
                     editor.apply();
 
-                    startActivity(new Intent(getActivity(), HomeActivity.class));
+                    startActivity(new Intent(getActivity(), HomeScreen.class));
                 }
             }
         });
@@ -92,6 +95,7 @@ public class FragmentLogin extends Fragment {
         btnLLogin = view.findViewById(R.id.btnLLogin);
         etLUserEmail = view.findViewById(R.id.etLUserEmail);
         etLpassword = view.findViewById(R.id.etLpassword);
+        etName = view.findViewById(R.id.etName);
     }
 
     private Boolean verify(final String userEmail, String userPassword) {
@@ -109,13 +113,14 @@ public class FragmentLogin extends Fragment {
         return result;
     }
 
-    private Boolean validate () {
+    private Boolean validate() {
         Boolean result = false;
 
-        String name = etLUserEmail.getText().toString();
+        email = etLUserEmail.getText().toString();
         String password = etLpassword.getText().toString();
+        String name = etName.getText().toString();
 
-        if (name.isEmpty() || password.isEmpty())
+        if (email.isEmpty() || password.isEmpty() || name.isEmpty())
             Toast.makeText(getContext(), "Please enter all the details.", Toast.LENGTH_SHORT).show();
         else
             result = true;

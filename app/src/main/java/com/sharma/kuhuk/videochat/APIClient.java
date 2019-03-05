@@ -5,7 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
 
-    public static final String BASE_URL = "http://192.168.1.9:3000/room/";
+//    public static final String BASE_URL = "http://192.168.1.9:3000/room/";
+    public static final String BASE_URL = "https://kuhuk-opentok-server.herokuapp.com/room/";
     private static Retrofit retrofit = null;
 
 

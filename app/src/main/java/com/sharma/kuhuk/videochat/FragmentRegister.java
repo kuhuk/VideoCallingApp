@@ -52,6 +52,7 @@ public class FragmentRegister extends Fragment {
                     //upload data to Firebase Auth
                     String user_email = userEmail.getText().toString().trim();
                     String user_password = userPassword.getText().toString().trim();
+                    String user_name = userName.getText().toString().trim();
 
                     firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -64,7 +65,7 @@ public class FragmentRegister extends Fragment {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(Constants.PREF_USER_EMAIL, userEmail.getText().toString());
                                 editor.apply();
-                                startActivity(new Intent(getActivity(), HomeActivity.class)); //start here
+                                startActivity(new Intent(getActivity(), HomeScreen.class)); //start here
                             } else {
                                 Toast.makeText(getContext(), "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
